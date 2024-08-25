@@ -1,3 +1,5 @@
-print 1 + 2;
-print 3 * 4;
+var beverage = "cafe au lait";
+var breakfast = "beignets";
+breakfast = breakfast + " with " + beverage;
+print breakfast;
 
