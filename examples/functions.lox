@@ -1,0 +1,14 @@
+fun myFunction() {
+    print "Hello from a function";
+}
+
+var f  = myFunction;
+print "I have a function:";
+print f;
+
+print "Calling the function:";
+var output = f();
+
+print "The output:";
+print output;
+
