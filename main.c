@@ -58,7 +58,6 @@ static void runFile(const char* path) {
 
 int main(int argc, const char* argv[]) {
     initVM(); 
-    freeVM();
 
     if (argc == 1) {
         repl();
@@ -67,6 +66,8 @@ int main(int argc, const char* argv[]) {
     } else {
         fprintf(stderr, "Usage: clox [path]\n");
     }
+
+    freeVM();
     return 0;
 }
 
