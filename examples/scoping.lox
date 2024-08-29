@@ -7,9 +7,11 @@ print "global: " + a;
         a = "inner2: " + a;  // inner shadowed inner
         print "local (shadowed inner): " + a;
     }
+    print a;
     var b = "declared in inner 1";
     {
         print "printed in inner 2: " + b;
     }
 }
+print a;
 
