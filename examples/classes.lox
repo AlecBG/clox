@@ -16,3 +16,46 @@ fun f() {
 }
 
 f();
+
+class Nested {
+    method() {
+        fun function() {
+            print this;
+        }
+        function();
+    }
+}
+
+Nested().method();
+
+fun sqrt(a) {
+    // Use Newton-Raphson (because I CBA to add exponents to the language)
+    // f(x) = x ^ 2 - a
+    // x_{n+1} = x_{n} - f(x_n) / f'(x_n)
+    // f(x) / f'(x) = x / 2 - a / 2 / x
+    if (a < 0) {
+        print "Can't call sqrt on a negative number";
+        sqrt(1, 2);  // die in a stupid way by calling sqrt with the wrong number of arguments.
+    }
+    var lastGuess = 0;
+    var guess = 0.5 * a;
+    while ((lastGuess - guess) * (lastGuess - guess) > 0.000000001) {
+        lastGuess = guess;
+        guess = guess - guess / 2 + a / 2 / guess;
+    }
+    return guess;
+}
+
+class MyGreatClass {
+    init(a, b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    hypotenuse() {
+        return sqrt(this.a * this.a + this.b * this.b);
+    }
+}
+
+var myGreatClassInstance = MyGreatClass(3, 4);
+print myGreatClassInstance.hypotenuse();
