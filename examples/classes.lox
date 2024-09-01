@@ -1,0 +1,18 @@
+class MyClass {
+}
+
+print MyClass;
+
+var myClassInstance = MyClass();
+print myClassInstance;
+myClassInstance.a = 1;
+myClassInstance.b = 2;
+print myClassInstance.a + myClassInstance.b + (myClassInstance.c = 3);
+
+fun f() {
+    class ClassInFun {}
+
+    print ClassInFun;
+}
+
+f();
