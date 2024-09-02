@@ -1,0 +1,31 @@
+class C {
+    init() {
+        this._a = 1;
+        this._b = 1;
+        this._c = 1;
+        this._d = 1;
+        this._e = 1;
+        this._f = 1;
+        this._g = 1;
+        this._h = 1;
+    }
+
+    a() { return this._a; }
+    b() { return this._b; }
+    c() { return this._c; }
+    d() { return this._d; }
+    e() { return this._e; }
+    f() { return this._f; }
+    g() { return this._g; }
+    h() { return this._h; }
+}
+
+var c = C();
+var sum = 0;
+var start = clock();
+while (sum < 100000000) {
+    sum = sum + c.a() + c.b() + c.c() + c.d() + c.e() + c.f() + c.g() + c.h();
+}
+
+print clock() - start;
+print sum;
