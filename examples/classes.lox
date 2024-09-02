@@ -59,3 +59,15 @@ class MyGreatClass {
 
 var myGreatClassInstance = MyGreatClass(3, 4);
 print myGreatClassInstance.hypotenuse();
+
+class ClassWithFieldLikeMethod {
+    init() {
+        fun f() {
+            print "not a method.";
+        }
+        this.field = f;
+    }
+}
+
+var classWithFieldLikeMethodInstance = ClassWithFieldLikeMethod();
+classWithFieldLikeMethodInstance.field();

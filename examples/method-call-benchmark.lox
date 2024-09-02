@@ -1,0 +1,25 @@
+class MyClass {
+    init () {
+        this.x = 0;
+    }
+
+    inc() {
+        this.x = this.x + 1;
+    }
+}
+
+var instance = MyClass();
+var start = clock();
+
+for (var i = 0; i < 20000; i = i + 1) {
+    instance.inc();
+    instance.inc();
+    instance.inc();
+    instance.inc();
+    instance.inc();
+}
+
+var end = clock();
+
+print "time (seconds):";
+print end - start;
