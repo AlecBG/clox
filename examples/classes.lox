@@ -9,6 +9,8 @@ myClassInstance.a = 1;
 myClassInstance.b = 2;
 print myClassInstance.a + myClassInstance.b + (myClassInstance.c = 3);
 
+print "----------------------------------------";
+
 fun f() {
     class ClassInFun {}
 
@@ -16,6 +18,8 @@ fun f() {
 }
 
 f();
+
+print "----------------------------------------";
 
 class Nested {
     method() {
@@ -27,6 +31,8 @@ class Nested {
 }
 
 Nested().method();
+
+print "----------------------------------------";
 
 fun sqrt(a) {
     // Use Newton-Raphson (because I CBA to add exponents to the language)
@@ -60,6 +66,8 @@ class MyGreatClass {
 var myGreatClassInstance = MyGreatClass(3, 4);
 print myGreatClassInstance.hypotenuse();
 
+print "----------------------------------------";
+
 class ClassWithFieldLikeMethod {
     init() {
         fun f() {
@@ -71,3 +79,42 @@ class ClassWithFieldLikeMethod {
 
 var classWithFieldLikeMethodInstance = ClassWithFieldLikeMethod();
 classWithFieldLikeMethodInstance.field();
+
+print "----------------------------------------";
+
+class A {
+    method() {
+        print "A method";
+    }
+}
+
+class B < A {
+    method() {
+        print "B method ";
+    }
+
+    test() {
+        super.method();
+    }
+}
+
+class C < B {}
+
+C().test();
+
+print "----------------------------------------";
+
+class IClo {
+    method() {
+        print "A";
+    }
+}
+
+class B < A {
+    method() {
+        var closure = super.method;
+        closure();
+    }
+}
+
+B().method();
